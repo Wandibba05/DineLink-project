@@ -60,3 +60,23 @@ const handleReviewClick = (booking: Booking) => {
         </div>
       </div>
 
+ <div className="space-y-2 mb-4">
+        <div className="flex items-center gap-2 text-muted-foreground">
+          <Calendar className="h-4 w-4" />
+          <span>{new Date(booking.date).toLocaleDateString("en-US", { 
+            weekday: "long", 
+            year: "numeric", 
+            month: "long", 
+            day: "numeric" 
+          })}</span>
+        </div>
+        <div className="flex items-center gap-2 text-muted-foreground">
+          <Clock className="h-4 w-4" />
+          <span>{booking.time}</span>
+        </div>
+        <div className="flex items-center gap-2 text-muted-foreground">
+          <Users className="h-4 w-4" />
+          <span>{booking.guests} {booking.guests === 1 ? "Guest" : "Guests"}</span>
+        </div>
+      </div>
+
