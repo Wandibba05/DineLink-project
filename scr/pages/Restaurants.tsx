@@ -12,3 +12,9 @@ import {
   SelectValue,
 } from "@/components/ui/select";
 
+const Restaurants = () => {
+  const { restaurants } = useRestaurants();
+  const [searchTerm, setSearchTerm] = useState("");
+  const [cuisineFilter, setCuisineFilter] = useState("all");
+
+
