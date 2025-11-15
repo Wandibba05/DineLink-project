@@ -105,3 +105,54 @@ const handleReviewClick = (booking: Booking) => {
       )}
     </Card>
   );
+return (
+    <div className="min-h-screen bg-background py-12">
+      <div className="container mx-auto px-4">
+        <div className="mb-8">
+          <h1 className="text-4xl font-bold mb-2">My Bookings</h1>
+          <p className="text-muted-foreground">Manage your restaurant reservations</p>
+        </div>
+
+        <Tabs defaultValue="upcoming" className="w-full">
+          <TabsList className="grid w-full max-w-md grid-cols-2 mb-8">
+            <TabsTrigger value="upcoming">
+              Upcoming ({upcomingBookings.length})
+            </TabsTrigger>
+            <TabsTrigger value="completed">
+              Completed ({completedBookings.length})
+            </TabsTrigger>
+          </TabsList>
+
+          <TabsContent value="upcoming" className="space-y-4">
+            {upcomingBookings.length > 0 ? (
+              <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                {upcomingBookings.map((booking) => (
+                  <BookingCard key={booking.id} booking={booking} showActions />
+                ))}
+              </div>
+            ) : (
+              <Card className="p-12 text-center">
+                <p className="text-lg text-muted-foreground">No upcoming bookings</p>
+                <p className="text-sm text-muted-foreground mt-2">
+                  Book your next dining experience from our restaurant selection
+                </p>
+              </Card>
+            )}
+          </TabsContent>
+
+          <TabsContent value="completed" className="space-y-4">
+            {completedBookings.length > 0 ? (
+              <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                {completedBookings.map((booking) => (
+                  <BookingCard key={booking.id} booking={booking} showActions />
+                ))}
+              </div>
+            ) : (
+              <Card className="p-12 text-center">
+                <p className="text-lg text-muted-foreground">No completed bookings yet</p>
+              </Card>
+            )}
+          </TabsContent>
+        </Tabs>
+      </div>
+
