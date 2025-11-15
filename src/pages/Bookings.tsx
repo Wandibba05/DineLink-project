@@ -39,3 +39,24 @@ const Bookings = () => {
     localStorage.setItem("bookings", JSON.stringify(updatedBookings));
     toast.success("Booking cancelled");
   };
+
+const handleReviewClick = (booking: Booking) => {
+    setSelectedBooking(booking);
+    setShowReviewDialog(true);
+  };
+
+  const BookingCard = ({ booking, showActions }: { booking: Booking; showActions: boolean }) => (
+    <Card className="p-6 hover:shadow-md transition-shadow">
+      <div className="flex items-start justify-between mb-4">
+        <div>
+          <h3 className="text-xl font-bold mb-1">{booking.restaurantName}</h3>
+          <span className={`inline-block px-3 py-1 rounded-full text-sm font-medium ${
+            booking.status === "upcoming" 
+              ? "bg-primary/10 text-primary" 
+              : "bg-secondary text-secondary-foreground"
+          }`}>
+            {booking.status === "upcoming" ? "Upcoming" : "Completed"}
+          </span>
+        </div>
+      </div>
+
