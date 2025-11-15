@@ -80,3 +80,28 @@ const handleReviewClick = (booking: Booking) => {
         </div>
       </div>
 
+
+ {showActions && (
+        <div className="flex gap-2">
+          {booking.status === "upcoming" ? (
+            <Button
+              variant="destructive"
+              className="w-full"
+              onClick={() => handleCancelBooking(booking.id)}
+            >
+              Cancel Booking
+            </Button>
+          ) : (
+            <Button
+              variant="outline"
+              className="w-full gap-2"
+              onClick={() => handleReviewClick(booking)}
+            >
+              <MessageSquare className="h-4 w-4" />
+              Leave Review
+            </Button>
+          )}
+        </div>
+      )}
+    </Card>
+  );
