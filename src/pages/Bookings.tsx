@@ -156,3 +156,15 @@ return (
         </Tabs>
       </div>
 
+ {selectedBooking && (
+        <ReviewDialog
+          open={showReviewDialog}
+          onOpenChange={setShowReviewDialog}
+          booking={selectedBooking}
+        />
+      )}
+    </div>
+  );
+};
+
+export default Bookings;
