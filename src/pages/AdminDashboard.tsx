@@ -61,3 +61,52 @@ const AdminDashboard = () => {
               </Card>
             </div>
           </TabsContent>
+
+        <TabsContent value="restaurants" className="space-y-4">
+            <Card>
+              <CardHeader>
+                <CardTitle>Restaurant Management</CardTitle>
+                <CardDescription>View and manage all restaurants on the platform</CardDescription>
+              </CardHeader>
+              <CardContent>
+                <div className="text-center py-8 text-muted-foreground">
+                  No restaurants registered yet
+                </div>
+              </CardContent>
+            </Card>
+          </TabsContent>
+
+          <TabsContent value="users" className="space-y-4">
+            <Card>
+              <CardHeader>
+                <CardTitle>User Management</CardTitle>
+                <CardDescription>View and manage all users</CardDescription>
+              </CardHeader>
+              <CardContent>
+                <div className="text-center py-8 text-muted-foreground">
+                  No users registered yet
+                </div>
+              </CardContent>
+            </Card>
+          </TabsContent>
+
+          <TabsContent value="bookings" className="space-y-4">
+            <Card>
+              <CardHeader>
+                <CardTitle>Booking Management</CardTitle>
+                <CardDescription>View all bookings across the platform</CardDescription>
+              </CardHeader>
+              <CardContent>
+                <div className="text-center py-8 text-muted-foreground">
+                  No bookings yet
+                </div>
+              </CardContent>
+            </Card>
+          </TabsContent>
+        </Tabs>
+      </div>
+    </div>
+  );
+};
+
+export default AdminDashboard;
