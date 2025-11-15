@@ -24,5 +24,12 @@ const Restaurants = () => {
       restaurant.cuisine.toLowerCase().includes(searchTerm.toLowerCase()) ||
       restaurant.description.toLowerCase().includes(searchTerm.toLowerCase());
 
+          const matchesCuisine =
+      cuisineFilter === "all" || restaurant.cuisine === cuisineFilter;
+
+    return matchesSearch && matchesCuisine;
+  });
+
+
 
 
