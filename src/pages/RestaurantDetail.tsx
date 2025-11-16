@@ -32,14 +32,11 @@ const RestaurantDetail = () => {
   const [time, setTime] = useState("");
   const [guests, setGuests] = useState("2");
 
-  if (!restaurant) {
-    return (
+
       <div className="min-h-screen bg-background flex items-center justify-center">
         <p className="text-xl text-muted-foreground">Restaurant not found</p>
       </div>
-    );
-  }
-
+  
   const timeSlots = [
     "11:00 AM", "11:30 AM", "12:00 PM", "12:30 PM",
     "1:00 PM", "1:30 PM", "2:00 PM", "5:00 PM",
@@ -47,22 +44,6 @@ const RestaurantDetail = () => {
     "7:30 PM", "8:00 PM", "8:30 PM", "9:00 PM"
   ];
 
-  const handleBooking = () => {
-    if (!date || !time) {
-      toast.error("Please select both date and time");
-      return;
-    }
-
-    const bookings = JSON.parse(localStorage.getItem("bookings") || "[]");
-    const newBooking = {
-      id: Date.now().toString(),
-      restaurantId: restaurant.id,
-      restaurantName: restaurant.name,
-      date: format(date, "yyyy-MM-dd"),
-      time,
-      guests: parseInt(guests),
-      status: "upcoming",
-      createdAt: new Date().toISOString(),
     };
     
     bookings.push(newBooking);
@@ -72,7 +53,7 @@ const RestaurantDetail = () => {
     navigate("/bookings");
   };
 
-  return (
+  
     <div className="min-h-screen bg-background">
       <div className="relative h-[400px] overflow-hidden">
         <img
