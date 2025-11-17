@@ -120,6 +120,9 @@ const Auth = () => {
     </Button>
   </form>
 </TabsContent>
+      export default Auth;
+
+
 
 
 
