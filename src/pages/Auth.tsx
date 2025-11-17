@@ -13,3 +13,14 @@ const Auth = () => {
   const [signUpEmail, setSignUpEmail] = useState("");
   const [signUpPassword, setSignUpPassword] = useState("");
   const [signUpName, setSignUpName] = useState("");
+    const handleSignIn = (e: React.FormEvent) => {
+    e.preventDefault();
+    console.log("Sign in:", signInEmail, signInPassword);
+  };
+
+  const handleSignUp = (e: React.FormEvent) => {
+    e.preventDefault();
+    console.log("Sign up:", signUpName, signUpEmail, signUpPassword);
+  };
+
+
