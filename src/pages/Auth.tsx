@@ -80,6 +80,47 @@ const Auth = () => {
     </Button>
   </form>
 </TabsContent>
+      <TabsContent value="signup">
+  <form onSubmit={handleSignUp} className="space-y-4">
+    <div className="space-y-2">
+      <Label htmlFor="signup-name">Full Name</Label>
+      <Input
+        id="signup-name"
+        type="text"
+        placeholder="John Doe"
+        value={signUpName}
+        onChange={(e) => setSignUpName(e.target.value)}
+        required
+      />
+    </div>
+    <div className="space-y-2">
+      <Label htmlFor="signup-email">Email</Label>
+      <Input
+        id="signup-email"
+        type="email"
+        placeholder="your@email.com"
+        value={signUpEmail}
+        onChange={(e) => setSignUpEmail(e.target.value)}
+        required
+      />
+    </div>
+    <div className="space-y-2">
+      <Label htmlFor="signup-password">Password</Label>
+      <Input
+        id="signup-password"
+        type="password"
+        placeholder="••••••••"
+        value={signUpPassword}
+        onChange={(e) => setSignUpPassword(e.target.value)}
+        required
+      />
+    </div>
+    <Button type="submit" className="w-full">
+      Sign Up
+    </Button>
+  </form>
+</TabsContent>
+
 
 
 
