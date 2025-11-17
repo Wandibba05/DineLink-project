@@ -22,5 +22,23 @@ const Auth = () => {
     e.preventDefault();
     console.log("Sign up:", signUpName, signUpEmail, signUpPassword);
   };
+  return (
+  <div className="min-h-screen bg-background flex items-center justify-center p-4">
+    <div className="w-full max-w-md">
+      <div className="text-center mb-8">
+        <Link to="/" className="inline-flex items-center gap-2 group">
+          <div className="bg-gradient-to-br from-primary to-accent p-3 rounded-lg group-hover:scale-105 transition-transform">
+            <UtensilsCrossed className="h-6 w-6 text-primary-foreground" />
+          </div>
+          <span className="text-2xl font-bold bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
+            DineLink
+          </span>
+        </Link>
+        <p className="text-muted-foreground mt-2">
+          Book your next dining experience
+        </p>
+      </div>
+
+
 
 
